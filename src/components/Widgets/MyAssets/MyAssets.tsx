@@ -145,7 +145,7 @@ const MyAssets: React.FC = () => {
           <p>Kripto değerlerim</p>
           <div ref={ref}>
             <Link to='/' type='button' className='button button-purple button-small'>
-              Kripto al
+              Buy Crypto
             </Link>
             <button type='button' className='box-icon pointer' onClick={() => handleMenuOpen()}>
               <i className='material-icons'>more_vert</i>
