@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState, useEffect } from 'react';
 import SiteLayout from '../../layouts/SiteLayout';
 import Header from '../../components/Header/Header';
-import MarketData from '../../components/Widgets/Trade/MarketData';
 import {
   faArrowUpRightFromSquare,
   faQrcode,
@@ -57,7 +56,7 @@ const styles = {
     border: '2px solid #4c00b0',
   },
   card: {
-    backgroundColor: '#EBF4FA',
+    backgroundColor: '#eff5ff',
     padding: '16px',
     borderRadius: '8px',
     textAlign: 'center',
@@ -68,11 +67,11 @@ const styles = {
   tabButton: {
     padding: '8px 12px',
     borderRadius: '8px',
-    backgroundColor: 'white',
+    backgroundColor: '#EBF4FA',
     fontSize: '14px',
   },
   marketItem: {
-    backgroundColor: 'white',
+    backgroundColor: '#eff5ff',
     padding: '16px',
     borderRadius: '8px',
     marginBottom: '8px',
@@ -96,7 +95,7 @@ const marketData = [
 ];
 
 const WalletScreen: React.FC = () => {
-  const [data, setData] = useState<ICryptoData[]>([]);
+  const [, setData] = useState<ICryptoData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -126,7 +125,6 @@ const WalletScreen: React.FC = () => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
-
   return (
     <SiteLayout>
       <Header icon='sort' title='User' />
@@ -166,31 +164,27 @@ const WalletScreen: React.FC = () => {
             <h4>{market.name}</h4>
             <p style={{ color: '#BBB' }}>{market.volume}</p>
           </div>
-          <div style={{ textAlign: 'right' }}>
-            <p>{market.price}</p>
-            <p style={{ color: market.color }}>{market.change}</p>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'flex-end',
+              alignItems: 'center',
+              gap: '10px',
+            }}
+          >
+            <p style={{ textAlign: 'right' }}>{market.price}</p>
+            <button
+              className='button button-purple button-small'
+              style={{
+                backgroundColor: market.change.startsWith('+') ? 'green' : 'red',
+                color: 'white',
+              }}
+            >
+              {market.change}
+            </button>
           </div>
         </div>
       ))}
-      {data && data.length > 0 && (
-        <table className='data-table mt-10'>
-          <thead>
-            <tr>
-              <th className='center'>Name</th>
-              <th className='center'>Price</th>
-              <th className='center'>24h Change</th>
-              <th className='center'>Volume (24h)</th>
-              <th className='center'>Market Cap</th>
-              <th className='center'>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map((item) => (
-              <MarketData key={item.id} item={item} />
-            ))}
-          </tbody>
-        </table>
-      )}
     </SiteLayout>
   );
 };

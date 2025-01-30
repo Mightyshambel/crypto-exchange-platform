@@ -26,7 +26,7 @@ const MarketData: React.FC<IProps> = ({ item }) => (
     <td className='center'>${item.total_volume.toLocaleString()}</td>
     <td className='center'>${item.market_cap.toLocaleString()}</td>
     <td className='center'>
-      <button className='trade-button'>Trade</button>
+      <button className='button button-purple button-small'>Trade</button>
     </td>
   </tr>
 );
