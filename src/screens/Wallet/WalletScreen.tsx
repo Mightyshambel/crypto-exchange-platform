@@ -185,6 +185,10 @@ const WalletScreen: React.FC = () => {
           </div>
         </div>
       ))}
+      <div>
+        <h1>Earn</h1>
+        <div></div>
+      </div>
     </SiteLayout>
   );
 };

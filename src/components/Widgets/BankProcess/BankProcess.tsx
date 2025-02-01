@@ -9,21 +9,9 @@ interface NetworkDetail {
   // other fields can be added here if necessary
 }
 
-
-
-
 interface NetworkDetails {
   [key: string]: NetworkDetail;
 }
-
-
-
-
-
-
-
-
-
 
 interface IBankDetails {
   id: number;
@@ -39,7 +27,7 @@ const dataArray: IBankDetails[] = [
     id: 1,
     name: 'ERC20',
     branch: 'Default',
-    iban:  '0x1eb88f491d1ef734fb2abf5c794dc98de38a1b2c',
+    iban: '0x1eb88f491d1ef734fb2abf5c794dc98de38a1b2c',
     logo: './erc20-qrcode.png',
   },
   {
@@ -47,7 +35,7 @@ const dataArray: IBankDetails[] = [
     name: 'TRC20',
     branch: 'Default',
     iban: 'THo2RgjWZg1CbbP7EBVcLWZqrT6JXUcWBP',
-    logo:  './trc20-qrcode.png'
+    logo: './trc20-qrcode.png',
   },
   {
     id: 3,
@@ -70,8 +58,6 @@ const BankProcess: React.FC = (props) => {
     setSelectedBank(dataArray[0]);
   }, []);
 
-  
-
   /**
    * Handles the change event for the bank selection dropdown.
    * Prevents the default event behavior, extracts the value from the target element,
@@ -79,12 +65,6 @@ const BankProcess: React.FC = (props) => {
    *
    * @param {React.ChangeEvent<HTMLSelectElement>} e - The change event object.
    */
-  
-  
-
-
-
-
 
   const handleViewOnChange = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     e.preventDefault();
@@ -99,15 +79,15 @@ const BankProcess: React.FC = (props) => {
   };
 
   const copyToClipboard = (iban: string) => {
-    navigator.clipboard.writeText(iban).then(() => {
-      setCopySuccess('IBAN copied to clipboard!');
-    }).catch((err) => {
-      setCopySuccess('Failed to copy IBAN');
-    });
+    navigator.clipboard
+      .writeText(iban)
+      .then(() => {
+        setCopySuccess('IBAN copied to clipboard!');
+      })
+      .catch((err) => {
+        setCopySuccess('Failed to copy IBAN');
+      });
   };
-
-
-
 
   return (
     <Box>
@@ -162,17 +142,21 @@ const BankProcess: React.FC = (props) => {
             {selectedBank && (
               <>
                 <div className='bank-info box-horizontal-padding'>
-                  <img height='300' 
-    width='300'  src={selectedBank.logo} alt='Bank logo' draggable='false' />
+                  <img
+                    height='300'
+                    width='300'
+                    src={selectedBank.logo}
+                    alt='Bank logo'
+                    draggable='false'
+                  />
                   <p>
                     <strong>
                       {selectedBank.name} - {selectedBank.branch}
                     </strong>
                     <br />
                     {selectedBank.iban}
-                    <i className='material-icons ' >content_copy</i>
+                    <i className='material-icons '>content_copy</i>
                   </p>
-                  
                 </div>
                 {/* <button type='button' className='pointer red no-select'>
                   <i className='material-icons'>content_copy</i>

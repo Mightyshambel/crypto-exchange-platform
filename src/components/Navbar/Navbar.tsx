@@ -38,7 +38,6 @@ const Navbar: React.FC = () => {
     gap: '10px',
     marginTop: '20px',
   };
-
   const menuHeadingStyles = {
     fontSize: '24px',
     marginBottom: '10px',
@@ -54,6 +53,7 @@ const Navbar: React.FC = () => {
   const navbarButtonListStyles = {
     paddingLeft: '0',
     marginLeft: '0',
+    marginTop: '10',
     listStyleType: 'none',
   };
 
@@ -97,10 +97,10 @@ const Navbar: React.FC = () => {
             <NavbarButton url='/trade' icon='paid' title='Trade' />
           </li>
           <li>
-            <NavbarButton url='/exchange' icon='account_balance' title='Trail' />
+            <NavbarButton url='/trail' icon='account_balance' title='Trail' />
           </li>
           <li>
-            <NavbarButton url='/capital' icon='equalizer' title='Market' />
+            <NavbarButton url='/capital' icon='equalizer' title='Capital' />
           </li>
         </ul>
       </div>

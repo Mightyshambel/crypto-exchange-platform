@@ -10,6 +10,7 @@ import DashboardScreen from '../screens/Dashboard/DashboardScreen';
 import TransactionsScreen from '../screens/Transactions/TransactionsScreen';
 import TradeScreen from '../screens/Trade/TradeScreen';
 import WalletScreen from '../screens/Wallet/WalletScreen';
+import TrailScreen from '../screens/Trail/TrailScreen';
 
 const Navigation: React.FC = () => (
   <Routes>
@@ -18,6 +19,7 @@ const Navigation: React.FC = () => (
     <Route path='/wallet' element={<WalletScreen />} />
     <Route path='/market' element={<MarketScreen />} />
     <Route path='/members' element={<ProfileScreen />} />
+    <Route path='/trail' element={<TrailScreen />} />
     <Route path='/capital' element={<CapitalScreen />} />
     <Route path='/dashboard' element={<DashboardScreen />} />
     <Route path='/members/signup' element={<SignupScreen />} />

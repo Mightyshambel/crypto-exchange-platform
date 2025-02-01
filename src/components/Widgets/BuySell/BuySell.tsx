@@ -222,7 +222,7 @@ const BuySell: React.FC = () => {
                 </div>
                 <div className='box-button box-vertical-padding'>
                   <button type='button' className='button button-red button-medium button-block'>
-                    Satış emri ver
+                   Sell orders
                   </button>
                 </div>
               </>

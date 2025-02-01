@@ -116,7 +116,7 @@ const TradeHistory: React.FC = () => {
     <Box>
       <div className='box-title box-vertical-padding box-horizontal-padding no-select'>
         <div ref={ref} className='flex flex-center flex-space-between'>
-          Piyasa geçmiş
+          Market History
           <button type='button' className='box-icon pointer' onClick={() => handleMenuOpen()}>
             <i className='material-icons'>more_vert</i>
           </button>
@@ -152,10 +152,10 @@ const TradeHistory: React.FC = () => {
             <table>
               <thead>
                 <tr>
-                  <th className='left no-select'>Fiyat</th>
-                  <th className='center no-select'>Hacim</th>
-                  <th className='center no-select'>İşlem</th>
-                  <th className='right no-select'>Zaman</th>
+                  <th className='left no-select'>Price</th>
+                  <th className='center no-select'>Volume</th>
+                  <th className='center no-select'>Process</th>
+                  <th className='right no-select'>Time</th>
                 </tr>
               </thead>
               <tbody>

@@ -13,7 +13,7 @@ const NavbarButton: React.FC<IProps> = ({ url, icon, title }) => {
   return (
     <Link
       to={url}
-      className={`flex items-center space-x-4 py-4 px-6 w-full text-lg rounded-md transition-all duration-300 
+      className={` 
         ${location.pathname.toLowerCase().includes(url) ? 'bg-blue-500 text-white' : 'text-gray-700 hover:bg-gray-100'} 
         ${location.pathname.toLowerCase().includes(url) ? 'font-semibold' : ''} 
         flex-col sm:flex-row`} // Flex layout changes for mobile and desktop
